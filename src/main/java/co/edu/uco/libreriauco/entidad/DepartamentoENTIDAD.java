@@ -6,18 +6,18 @@ import co.edu.uco.libreriauco.transversal.utilitarios.UtilObjeto;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilTexto;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilUUID;
 
-public class DepartamentoENTIDAD {
+public class DepartamentoEntidad {
 	
-	private PaisENTIDAD pais;
+	private PaisEntidad pais;
 	private UUID id;
 	private String nombre;
 	
 	
 	
-	public DepartamentoENTIDAD() {
+	public DepartamentoEntidad() {
 		setId(UtilUUID.obtenerUUIDDefecto());
 		setNombre(UtilTexto.VACIA);
-		setPaisDTO(new PaisENTIDAD());
+		setPaisDTO(new PaisEntidad());
 	}
 	
 	
@@ -42,14 +42,14 @@ public class DepartamentoENTIDAD {
 
 
 
-	public PaisENTIDAD getPaisDTO() {
+	public PaisEntidad getPaisDTO() {
 		return pais;
 	}
 
 
 
-	public void setPaisDTO(PaisENTIDAD paisDTO) {
-		this.pais = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(pais,new PaisENTIDAD() );
+	public void setPaisDTO(PaisEntidad paisDTO) {
+		this.pais = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(pais,new PaisEntidad() );
 	}
 	
 	

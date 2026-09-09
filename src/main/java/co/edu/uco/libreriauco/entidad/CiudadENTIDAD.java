@@ -6,18 +6,18 @@ import co.edu.uco.libreriauco.transversal.utilitarios.UtilObjeto;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilTexto;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilUUID;
 
-public class CiudadENTIDAD {
+public class CiudadEntidad {
 	
-	private DepartamentoENTIDAD departamento;
+	private DepartamentoEntidad departamento;
 	private UUID id;	
 	private String nombre;
 	
 	
 	
-	public CiudadENTIDAD() {
+	public CiudadEntidad() {
 		setId(UtilUUID.obtenerUUIDDefecto());
 		setNombre(UtilTexto.VACIA);
-		setDepartamento(new DepartamentoENTIDAD());
+		setDepartamento(new DepartamentoEntidad());
 	}
 	
 	
@@ -42,14 +42,14 @@ public class CiudadENTIDAD {
 
 
 
-	public DepartamentoENTIDAD getDepartamento() {
+	public DepartamentoEntidad getDepartamento() {
 		return departamento;
 	}
 
 
 
-	public void setDepartamento(DepartamentoENTIDAD departamento) {
-		this.departamento = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(departamento,new DepartamentoENTIDAD() );
+	public void setDepartamento(DepartamentoEntidad departamento) {
+		this.departamento = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(departamento,new DepartamentoEntidad() );
 	}
 	
 	

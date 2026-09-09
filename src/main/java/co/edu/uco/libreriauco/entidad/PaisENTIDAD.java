@@ -5,7 +5,7 @@ import java.util.UUID;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilTexto;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilUUID;
 
-public class PaisENTIDAD {
+public class PaisEntidad {
 	
 	private UUID id;
 	private String nombre;
@@ -13,7 +13,7 @@ public class PaisENTIDAD {
 	
 	
 	
-	public PaisENTIDAD() {
+	public PaisEntidad() {
 		setId(null);
 		setNombre(UtilTexto.VACIA);
 	}
