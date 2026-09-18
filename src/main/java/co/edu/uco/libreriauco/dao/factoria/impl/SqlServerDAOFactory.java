@@ -21,7 +21,7 @@ public class SqlServerDAOFactory extends DAOFactory{
 	@Override
 	protected void abrirConexion() {
 		// TAREA: Como abrir una conexion con SQL server desde java
-		Connection conexion = null;
+		/**Connection conexion = null;
 		setConexion(conexion);
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -39,7 +39,8 @@ public class SqlServerDAOFactory extends DAOFactory{
 		}
 
 		setConexion(conexion);
-	}
+	}*/
+		
 
 	
 	@Override

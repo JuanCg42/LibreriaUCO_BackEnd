@@ -8,7 +8,7 @@ public class LibreriaUCODTOException extends LibreriaUCOExcepcion{
 	private static final long serialVersionUID = -6240488015702704944L;
 
 	
-	protected LibreriaUCODTOException(String mensajeUsuario, String mensajeTecnico,
+	private LibreriaUCODTOException(String mensajeUsuario, String mensajeTecnico,
 			Exception excepcionRaiz) {
 		super(Capa.DTO, mensajeUsuario,mensajeTecnico, excepcionRaiz);
 		

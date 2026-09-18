@@ -1,16 +1,23 @@
 package co.edu.uco.libreriauco.dao.datos.entidad.sqlserver;
 
+import java.sql.Connection;
 import java.util.List;
 import java.util.UUID;
 
 import co.edu.uco.libreriauco.dao.datos.entidad.PaisDAO;
+import co.edu.uco.libreriauco.dao.datos.entidad.sqlDAO;
 import co.edu.uco.libreriauco.entidad.PaisEntidad;
 
-public class PaisSqlServerDAO implements PaisDAO{
+public class PaisSqlServerDAO extends sqlDAO implements PaisDAO{
+
+	public PaisSqlServerDAO(Connection conexion) {
+		super(conexion);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public void crear(PaisEntidad entidad) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 

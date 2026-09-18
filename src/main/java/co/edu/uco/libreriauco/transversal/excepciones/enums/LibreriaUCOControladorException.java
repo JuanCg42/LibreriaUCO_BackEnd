@@ -10,8 +10,23 @@ public class LibreriaUCOControladorException extends LibreriaUCOExcepcion{
 	
 	private LibreriaUCOControladorException(String mensajeUsuario, String mensajeTecnico,
 			Exception excepcionRaiz) {
-		super(Capa.DATOS, mensajeUsuario,mensajeTecnico, excepcionRaiz);
+		super(Capa.CONTROLADORA, mensajeUsuario,mensajeTecnico, excepcionRaiz);
 		
-	}
+		public static LibreriaUCOExcepcion crear(String mensajeUsuario) {
+			return new LibreriaUCOControladorException(mensajeUsuario , mensaje Usuario, new Exception(mensajeUsuario))
+					
+		}
+		
+		public static LibreriaUCOExcepcion crear(String mensajeUsuario) {
+			return new LibreriaUCOControladorException(mensajeUsuario , mensaje Usuario, new Exception(mensajeTecnico))
+					
+		}
+		
+		
+		public static LibreriaUCOExcepcion crear(String mensajeUsuario) {
+			return new LibreriaUCOControladorException(mensajeUsuario , mensaje Usuario, new Exception(mensaje))
+					
+		}
+	
 
 }
