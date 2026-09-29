@@ -3,6 +3,8 @@ package co.edu.uco.libreriauco.transversal.utilitarios;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import co.edu.uco.libreriauco.transversal.excepciones.enums.LibreriaUCOTransversalException;
+
 public class UtilSQL {
 	private UtilSQL() {
 		
@@ -34,7 +36,7 @@ public class UtilSQL {
 	}
 	
 	public static boolean conexionEstaVacia(Connection conexion) {
-		return UtilObjeto.esNulo(conexion);)
+		return UtilObjeto.esNulo(conexion);
 	}
 	
 
