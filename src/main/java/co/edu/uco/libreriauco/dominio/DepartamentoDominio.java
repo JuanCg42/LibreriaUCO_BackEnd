@@ -10,10 +10,10 @@ public class DepartamentoDominio {
 	
 	private UUID id;
 	private String nombre;
-	private DepartamentoDominio pais;
-	
-	
-	
+	private PaisDominio pais;
+
+
+
 	private DepartamentoDominio(Builder builder) {
 		
 		this.id = builder.id;
@@ -31,7 +31,7 @@ public class DepartamentoDominio {
 		return nombre;
 	}
 	
-	public DepartamentoDominio getPais() {
+	public PaisDominio getPais() {
 		return pais;
 	}
 
@@ -44,14 +44,14 @@ public class DepartamentoDominio {
 		
 		private UUID id;
 		private String nombre;
-		private DepartamentoDominio pais;
-		
-		
-		
+		private PaisDominio pais;
+
+
+
 		public Builder() {
 			id = UtilUUID.obtenerUUIDDefecto();
 			nombre = UtilTexto.VACIA;
-			pais = new DepartamentoDominio.Builder().build();
+			pais = new PaisDominio.Builder().build();
 		}
 		
 		
@@ -65,8 +65,8 @@ public class DepartamentoDominio {
 			return this;
 		}
 		
-		public Builder pais(DepartamentoDominio pais) {
-			this.pais = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(pais, new DepartamentoDominio.Builder().build());
+		public Builder pais(PaisDominio pais) {
+			this.pais = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(pais, new PaisDominio.Builder().build());
 			return this;
 		}
 		

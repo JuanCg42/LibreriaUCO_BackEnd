@@ -4,25 +4,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-
 import co.edu.uco.libreriauco.dao.datos.entidad.DepartamentoDAO;
 import co.edu.uco.libreriauco.dao.datos.entidad.PaisDAO;
 import co.edu.uco.libreriauco.dao.datos.entidad.sqlserver.DepartamentoSqlServerDAO;
 import co.edu.uco.libreriauco.dao.datos.entidad.sqlserver.PaisSqlServerDAO;
 import co.edu.uco.libreriauco.dao.factoria.DAOFactory;
+import co.edu.uco.libreriauco.transversal.excepciones.enums.LibreriaUCODatosException;
 
-public class SqlServerDAOFactory extends DAOFactory{
+public class SqlServerDAOFactory extends DAOFactory {
 
-	private static final String SERVIDOR = "localhost\\MSSQLSERVER01";
+	private static final String SERVIDOR = "localhost";
 	private static final String PUERTO = "1433";
 	private static final String BASE_DE_DATOS = "libreriauco";
-	
-	
+
 	@Override
 	protected void abrirConexion() {
-		// TAREA: Como abrir una conexion con SQL server desde java
-		/**Connection conexion = null;
-		setConexion(conexion);
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
@@ -30,27 +26,30 @@ public class SqlServerDAOFactory extends DAOFactory{
 					+ ";databaseName=" + BASE_DE_DATOS
 					+ ";integratedSecurity=true;encrypt=false;trustServerCertificate=true;";
 
-			conexion = DriverManager.getConnection(cadenaConexion);
+			Connection conexion = DriverManager.getConnection(cadenaConexion);
+			setConexion(conexion);
 
 		} catch (ClassNotFoundException excepcion) {
-			throw new RuntimeException("No se encontró el driver JDBC de SQL Server", excepcion);
+			throw LibreriaUCODatosException.crear(
+					"No fue posible conectarse a la fuente de datos. Por favor contacte al administrador de la aplicacion.",
+					"No se encontro el driver JDBC de SQL Server (com.microsoft.sqlserver.jdbc.SQLServerDriver). Verifique la dependencia mssql-jdbc en el pom.xml.",
+					excepcion);
 		} catch (SQLException excepcion) {
-			throw new RuntimeException("Error al establecer la conexión con la base de datos", excepcion);
+			throw LibreriaUCODatosException.crear(
+					"No fue posible conectarse a la fuente de datos. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicacion.",
+					"Error al abrir la conexion con SQL Server: " + excepcion.getMessage(),
+					excepcion);
 		}
+	}
 
-		setConexion(conexion);
-	}*/
-		
-
-	
 	@Override
 	public PaisDAO obtenerPaisDAO() {
-		return new PaisSqlServerDAO();
+		return new PaisSqlServerDAO(getConexion());
 	}
 
 	@Override
 	public DepartamentoDAO obtenerDepartamentoDAO() {
-		return new DepartamentoSqlServerDAO();
+		return new DepartamentoSqlServerDAO(getConexion());
 	}
 
 }

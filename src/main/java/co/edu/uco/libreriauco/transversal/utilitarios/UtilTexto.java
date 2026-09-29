@@ -2,7 +2,7 @@ package co.edu.uco.libreriauco.transversal.utilitarios;
 
 public class UtilTexto {
 	private static UtilTexto INSTANCIA;
-	public static String VACIA = "";
+	public static final String VACIA = "";
 	private UtilTexto() {
 		
 	}

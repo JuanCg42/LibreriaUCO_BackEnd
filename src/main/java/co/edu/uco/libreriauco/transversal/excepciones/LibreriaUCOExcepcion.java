@@ -27,6 +27,11 @@ public class LibreriaUCOExcepcion extends RuntimeException {
 		return serialVersionUID;
 	}
 
+	@Override
+	public String getMessage() {
+		return getMensajeTecnico();
+	}
+
 	public Capa getCapa() {
 		return capa;
 	}
@@ -44,7 +49,7 @@ public class LibreriaUCOExcepcion extends RuntimeException {
 	}
 
 	private void setCapa(Capa capa) {
-		this.capa = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(capa, capa.GENERAL);
+		this.capa = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(capa, Capa.GENERAL);
 	}
 
 	private void setMensajeUsuario(String mensajeUsuario) {

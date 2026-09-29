@@ -2,25 +2,23 @@ package co.edu.uco.libreriauco.dao.datos.entidad;
 
 import java.sql.Connection;
 
+import co.edu.uco.libreriauco.transversal.utilitarios.UtilSQL;
+
 public abstract class sqlDAO {
+
 	private Connection conexion;
-	
-	
+
 	protected sqlDAO(Connection conexion) {
 		setConexion(conexion);
 	}
-	
+
 	private void setConexion(Connection conexion) {
-		
-		
-		this.conexion= conexion;
+		UtilSQL.asegurarConexionAbierta(conexion);
+		this.conexion = conexion;
 	}
 
-	private Connection getConnection() {
+	protected Connection getConexion() {
 		return conexion;
 	}
-	
-	
-	
 
 }

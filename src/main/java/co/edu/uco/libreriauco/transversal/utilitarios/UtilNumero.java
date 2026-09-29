@@ -2,7 +2,7 @@ package co.edu.uco.libreriauco.transversal.utilitarios;
 
 public class UtilNumero {
 	
-	public static int CERO=0;
+	public static final int CERO = 0;
 	
 	private UtilNumero() {
 		

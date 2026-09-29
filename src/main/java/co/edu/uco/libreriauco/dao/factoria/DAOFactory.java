@@ -4,12 +4,12 @@ import java.sql.Connection;
 
 import co.edu.uco.libreriauco.dao.datos.entidad.DepartamentoDAO;
 import co.edu.uco.libreriauco.dao.datos.entidad.PaisDAO;
-import co.edu.uco.libreriauco.transversal.catalogo.CatalogoMensajes.UtilSQL;
+import co.edu.uco.libreriauco.transversal.utilitarios.UtilSQL;
 
 public abstract class DAOFactory {
-	
+
 	private Connection conexion;
-	
+
 	protected DAOFactory() {
 		abrirConexion();
 	}
@@ -18,41 +18,32 @@ public abstract class DAOFactory {
 		return conexion;
 	}
 
-	public void setConexion(Connection conexion) {
-		//TAREA : Asegurar que la conexión este abierta y sea valida
+	protected void setConexion(Connection conexion) {
+		UtilSQL.asegurarConexionAbierta(conexion);
 		this.conexion = conexion;
 	}
-	
 
-	//No en todos los motores se abre igual conexion
-	
+	// No en todos los motores se abre igual la conexion
 	protected abstract void abrirConexion();
-	
-	
-	
+
 	public void cerrarConexion() {
-		//TAREA : como se cierra la conexion de manera segura
-		UtilSQL.cerrarConexion(conexion)
+		UtilSQL.cerrarConexion(conexion);
 	}
-	
+
 	public void iniciarTransaccion() {
-		// TAREA: Como se inicia una transaccion de forma segura
-		UtilSQL.iniciarConexion(conexion)
+		UtilSQL.iniciarTransaccion(conexion);
 	}
-	
+
 	public void confirmarTransaccion() {
-		//Tarea: como se confirma una transaccion de forma segura
-		UtilSQL.confirmarConexion(conexion)
+		UtilSQL.confirmarTransaccion(conexion);
 	}
-	
+
 	public void cancelarTransaccion() {
-		//Tarea: como se cancela una transaccion de forma segura
-		UtilSQL.cancelarConexion(conexion)
+		UtilSQL.cancelarTransaccion(conexion);
 	}
-	
+
 	public abstract PaisDAO obtenerPaisDAO();
-	
+
 	public abstract DepartamentoDAO obtenerDepartamentoDAO();
-	
-	
+
 }

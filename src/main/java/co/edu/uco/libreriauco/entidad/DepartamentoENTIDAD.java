@@ -17,7 +17,7 @@ public class DepartamentoEntidad {
 	public DepartamentoEntidad() {
 		setId(UtilUUID.obtenerUUIDDefecto());
 		setNombre(UtilTexto.VACIA);
-		setPaisDTO(new PaisEntidad());
+		setPais(new PaisEntidad());
 	}
 	
 	
@@ -42,14 +42,14 @@ public class DepartamentoEntidad {
 
 
 
-	public PaisEntidad getPaisDTO() {
+	public PaisEntidad getPais() {
 		return pais;
 	}
 
 
 
-	public void setPaisDTO(PaisEntidad paisDTO) {
-		this.pais = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(pais,new PaisEntidad() );
+	public void setPais(PaisEntidad pais) {
+		this.pais = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(pais, new PaisEntidad());
 	}
 	
 	
