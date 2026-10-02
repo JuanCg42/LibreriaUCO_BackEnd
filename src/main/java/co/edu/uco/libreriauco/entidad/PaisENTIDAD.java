@@ -14,8 +14,13 @@ public class PaisEntidad {
 	
 	
 	public PaisEntidad() {
-		setId(null);
+		setId(UtilUUID.obtenerUUIDDefecto());
 		setNombre(UtilTexto.VACIA);
+	}
+	
+	public PaisEntidad(UUID id, String nombre) {
+		setId(id);
+		setNombre(nombre);
 	}
 
 
