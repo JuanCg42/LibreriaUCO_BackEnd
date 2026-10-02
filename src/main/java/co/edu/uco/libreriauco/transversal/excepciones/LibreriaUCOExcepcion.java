@@ -6,9 +6,7 @@ import co.edu.uco.libreriauco.transversal.utilitarios.UtilTexto;
 
 public class LibreriaUCOExcepcion extends RuntimeException {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -3141765983563781140L;
 	private Capa capa;
 	private String mensajeUsuario;
