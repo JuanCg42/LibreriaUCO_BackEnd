@@ -36,6 +36,9 @@ public class CatalogoMensajes {
 		}
 		
 		public static final String PAIS_EXISTE_CON_EL_MISMO_NOMBRE_DE_PAIS_YA_A_CREAR = "Ya existe otro país con el nombre con el cuál se desea ";
+		public static final String NOMBRE_PAIS_OBLIGATORIO = "eL NOMBRE ";
+		public static final String LONGITUD_NOMBRE_PAIS_NO_VALIDA = "La longitud el nombre del pais no es válida.asegurese que este en";
+		public static final Object FORMATO_NOMBRE_PAIS_NO_VALIDO = "El formato del nombre no es valido. Asegurese de que solamente tenga letras de la A a la Z, mayúsculas o minusculas y espacios";
 	}
 	
 	

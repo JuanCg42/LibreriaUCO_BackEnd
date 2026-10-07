@@ -9,6 +9,7 @@ import co.edu.uco.libreriauco.dominio.PaisDominio;
 import co.edu.uco.libreriauco.entidad.PaisEntidad;
 import co.edu.uco.libreriauco.negocio.negocio.PaisNegocio;
 import co.edu.uco.libreriauco.negocio.negocio.assembler.impl.PaisEntidadAssembler;
+import co.edu.uco.libreriauco.negocio.negocio.reglas.impl.pais.AsegurarNombreNuevoPaisNoExistaRule;
 import co.edu.uco.libreriauco.transversal.catalogo.CatalogoMensajes;
 import co.edu.uco.libreriauco.transversal.excepciones.enums.LibreriaUCONegocioException;
 import co.edu.uco.libreriauco.transversal.excepciones.enums.LibreriaUCOTransversalException;
@@ -24,7 +25,8 @@ public class PaisNegocioImpl implements PaisNegocio{
 	@Override
 	public void registrarInformacionNuevoPais(PaisDominio datos) {
 		asegurarDatosRegistroNuevoPaisValidos(datos);
-		asegurarNombrePaisNoExista(datos.getNombre());
+	    AsegurarNombreNuevoPaisNoExistaRule.obtenerInstancia().ejecutar(datos.getNombre(), daoFactory);
+	    
 		
 		
 		var paisEntidad = PaisEntidadAssembler.getInstance().convertirAEntidad(datos);// Es que el que traduce de negocio a entidad, la capa de negocio trabaja solo en terminos de dominio
