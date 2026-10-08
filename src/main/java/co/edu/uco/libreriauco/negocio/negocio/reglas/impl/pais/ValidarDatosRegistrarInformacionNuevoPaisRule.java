@@ -6,13 +6,13 @@ import co.edu.uco.libreriauco.negocio.negocio.reglas.Rule;
 public class ValidarDatosRegistrarInformacionNuevoPaisRule implements Rule<PaisDominio> {
 
 	
-	private static final Rule<PaisDominio> instancia = new ValidarDatosRegistrarInformacion();
+	private static final Rule<PaisDominio> instancia = new ValidarDatosRegistrarInformacionNuevoPaisRule();
 	
-	private ValidarDatosRegistrarInformacion() {
+	private ValidarDatosRegistrarInformacionNuevoPaisRule() {
 		
 	}
 
-	public static final Rule<String> obtenerInstancia() {
+	public static final Rule<PaisDominio> obtenerInstancia() {
 		return instancia;
 	}
 	
@@ -20,7 +20,6 @@ public class ValidarDatosRegistrarInformacionNuevoPaisRule implements Rule<PaisD
 	@Override
 	public void ejecutar(PaisDominio... datos) {
 		var dominio = datos[0];
-		
 		AsegurarNombrePaisValidoRule.obtenerInstancia().ejecutar(dominio.getNombre());		
 	}
 

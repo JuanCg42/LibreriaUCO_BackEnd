@@ -10,6 +10,8 @@ import co.edu.uco.libreriauco.entidad.PaisEntidad;
 import co.edu.uco.libreriauco.negocio.negocio.PaisNegocio;
 import co.edu.uco.libreriauco.negocio.negocio.assembler.impl.PaisEntidadAssembler;
 import co.edu.uco.libreriauco.negocio.negocio.reglas.impl.pais.AsegurarNombreNuevoPaisNoExistaRule;
+import co.edu.uco.libreriauco.negocio.negocio.reglas.impl.pais.AsegurarNombrePaisValidoRule;
+import co.edu.uco.libreriauco.negocio.negocio.reglas.impl.pais.ValidarDatosRegistrarInformacionNuevoPaisRule;
 import co.edu.uco.libreriauco.transversal.catalogo.CatalogoMensajes;
 import co.edu.uco.libreriauco.transversal.excepciones.enums.LibreriaUCONegocioException;
 import co.edu.uco.libreriauco.transversal.excepciones.enums.LibreriaUCOTransversalException;
@@ -24,7 +26,7 @@ public class PaisNegocioImpl implements PaisNegocio{
 
 	@Override
 	public void registrarInformacionNuevoPais(PaisDominio datos) {
-		asegurarDatosRegistroNuevoPaisValidos(datos);
+		ValidarDatosRegistrarInformacionNuevoPaisRule.obtenerInstancia().ejecutar(datos);		
 	    AsegurarNombreNuevoPaisNoExistaRule.obtenerInstancia().ejecutar(datos.getNombre(), daoFactory);
 	    
 		
@@ -39,18 +41,6 @@ public class PaisNegocioImpl implements PaisNegocio{
 	private void asegurarDatosRegistroNuevoPaisValidos(PaisDominio datos) {
 		
 		
-	}
-	
-	private void asegurarNombrePaisNoExista(String nombrePais) {
-		var entidadFiltro = new PaisEntidad();
-		entidadFiltro.setNombre(nombrePais);
-		
-		var resultados = daoFactory.obtenerPaisDAO().consultarPorFiltro(entidadFiltro);// El solo va y consulta por nombre debido a que solo lo definimos por eso
-		
-		if (!resultados.isEmpty()) {
-			var mensajeUsuario = CatalogoMensajes.PaisNegocioImpl.PAIS_EXISTE_CON_EL_MISMO_NOMBRE_DE_PAIS_YA_A_CREAR;
-			throw LibreriaUCONegocioException.crear(mensajeUsuario);
-		}
 	}
 	
 	private UUID generarIdPaisUnico() {

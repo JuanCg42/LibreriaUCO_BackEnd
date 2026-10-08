@@ -2,7 +2,7 @@ package co.edu.uco.libreriauco.transversal.utilitarios;
 
 public class UtilTexto {
 	private static UtilTexto INSTANCIA;
-	public static final String VACIA = "";
+	public static String VACIA = "";
 	public static final String SOLO_LETRAS_ESPACIOS="^[a-zA-Z ñÑáÁéÉíÍóÓúÚ]*$";
 	private UtilTexto() {
 		
@@ -70,6 +70,8 @@ public class UtilTexto {
 		
 	}
  
+ 
+	
 
 
 	
