@@ -4,7 +4,7 @@ import co.edu.uco.libreriauco.dao.factoria.DAOFactory;
 import co.edu.uco.libreriauco.entidad.PaisEntidad;
 import co.edu.uco.libreriauco.negocio.negocio.reglas.Rule;
 import co.edu.uco.libreriauco.transversal.catalogo.CatalogoMensajes;
-import co.edu.uco.libreriauco.transversal.excepciones.enums.LibreriaUCONegocioException;
+import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCONegocioException;
 
 public class AsegurarNombreNuevoPaisNoExistaRule implements Rule<Object>{
 	

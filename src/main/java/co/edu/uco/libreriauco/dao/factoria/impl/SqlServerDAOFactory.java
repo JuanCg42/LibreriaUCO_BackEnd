@@ -9,7 +9,7 @@ import co.edu.uco.libreriauco.dao.datos.entidad.PaisDAO;
 import co.edu.uco.libreriauco.dao.datos.entidad.sqlserver.DepartamentoSqlServerDAO;
 import co.edu.uco.libreriauco.dao.datos.entidad.sqlserver.PaisSqlServerDAO;
 import co.edu.uco.libreriauco.dao.factoria.DAOFactory;
-import co.edu.uco.libreriauco.transversal.excepciones.enums.LibreriaUCODatosException;
+import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCODatosException;
 
 public class SqlServerDAOFactory extends DAOFactory {
 

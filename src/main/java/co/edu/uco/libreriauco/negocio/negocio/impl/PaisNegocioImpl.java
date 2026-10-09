@@ -13,14 +13,14 @@ import co.edu.uco.libreriauco.negocio.negocio.reglas.impl.pais.AsegurarNombreNue
 import co.edu.uco.libreriauco.negocio.negocio.reglas.impl.pais.AsegurarNombrePaisValidoRule;
 import co.edu.uco.libreriauco.negocio.negocio.reglas.impl.pais.ValidarDatosRegistrarInformacionNuevoPaisRule;
 import co.edu.uco.libreriauco.transversal.catalogo.CatalogoMensajes;
-import co.edu.uco.libreriauco.transversal.excepciones.enums.LibreriaUCONegocioException;
-import co.edu.uco.libreriauco.transversal.excepciones.enums.LibreriaUCOTransversalException;
+import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCONegocioException;
+import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCOTransversalException;
 
 public class PaisNegocioImpl implements PaisNegocio{
 	
 	private DAOFactory daoFactory;
 	
-	protected PaisNegocioImpl(DAOFactory daoFactory) {
+	public PaisNegocioImpl(DAOFactory daoFactory) {
 		this.daoFactory = daoFactory;
 	}
 

@@ -3,7 +3,7 @@ package co.edu.uco.libreriauco.transversal.utilitarios;
 import java.sql.Connection;
 import java.sql.SQLException;
 import co.edu.uco.libreriauco.transversal.catalogo.CatalogoMensajes;
-import co.edu.uco.libreriauco.transversal.excepciones.enums.LibreriaUCOTransversalException;
+import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCOTransversalException;
 
 
 public class UtilSQL {
