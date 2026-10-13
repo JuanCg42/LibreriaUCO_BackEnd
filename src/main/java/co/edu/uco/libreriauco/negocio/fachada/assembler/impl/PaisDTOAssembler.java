@@ -8,16 +8,22 @@ import co.edu.uco.libreriauco.negocio.fachada.assembler.DTOAssembler;
 
 public class PaisDTOAssembler  implements DTOAssembler<PaisDominio, PaisDTO>{
 	
-	private static final DTOAssembler<PaisDominio, PaisDTO> instancia= new PaisDTOAssembler();
-
+	private static final DTOAssembler<PaisDominio, PaisDTO> instancia = new PaisDTOAssembler();
+	
 	
 	private PaisDTOAssembler() {
 		
 	}
+	
+	
+	public static DTOAssembler<PaisDominio, PaisDTO> getInstance(){
+		return instancia;
+	}
+	
 	@Override
 	public PaisDTO convertirADTO(PaisDominio dominio) {
 
-		return instancia;
+		return null;
 	}
 
 	@Override
@@ -25,6 +31,7 @@ public class PaisDTOAssembler  implements DTOAssembler<PaisDominio, PaisDTO>{
 
 		return null;
 	}
+	
 	@Override
 	public List<PaisDTO> convertirADTO(List<PaisDominio> listaDominios) {
 		

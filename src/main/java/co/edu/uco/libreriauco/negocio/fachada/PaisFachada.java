@@ -3,7 +3,6 @@ package co.edu.uco.libreriauco.negocio.fachada;
 import java.util.List;
 import java.util.UUID;
 
-import co.edu.uco.libreriauco.dominio.PaisDominio;
 import co.edu.uco.libreriauco.dto.PaisDTO;
 
 public interface PaisFachada {
@@ -14,10 +13,10 @@ public interface PaisFachada {
 	
 	void DarBajaInformacionPaisExistente(UUID id);
 	
-	List<PaisDominio> consultarPorFiltro(PaisDTO filtro);
+	List<PaisDTO> consultarPorFiltro(PaisDTO filtro);
 	
-	List<PaisDominio> consultarTodos();
+	List<PaisDTO> consultarTodos();
 	
-	PaisDominio consultarPorId(UUID id);
+	List<PaisDTO> consultarPorId(UUID id);
 
 }

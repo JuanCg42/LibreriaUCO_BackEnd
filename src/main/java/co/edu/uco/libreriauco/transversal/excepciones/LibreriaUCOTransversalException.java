@@ -1,6 +1,6 @@
 package co.edu.uco.libreriauco.transversal.excepciones;
 
-import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCOExcepcion;
+
 import co.edu.uco.libreriauco.transversal.excepciones.enums.Capa;
 
 public class LibreriaUCOTransversalException extends LibreriaUCOExcepcion {

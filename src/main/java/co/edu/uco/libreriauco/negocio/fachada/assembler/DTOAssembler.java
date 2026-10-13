@@ -7,5 +7,5 @@ public interface DTOAssembler <D,E>{
 	E convertirADTO(D dominio);
 	D convertirADominio(E dto);
 	
-	List<E> convertirADTO(List<D> dominios);
+	List<E> convertirADTO(List<D> listaDominios);
 }
