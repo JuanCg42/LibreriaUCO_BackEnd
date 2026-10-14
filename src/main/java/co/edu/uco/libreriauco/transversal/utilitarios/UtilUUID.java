@@ -1,5 +1,6 @@
 package co.edu.uco.libreriauco.transversal.utilitarios;
 
+import java.time.Instant;
 import java.util.UUID;
 
 public final class UtilUUID {
@@ -29,6 +30,14 @@ public final class UtilUUID {
 	 public static UUID obtenerUUIDDefecto() {
 	        return convertirAUUID(UUID_DEFECTO_TEXTO);
 	}
+	 
+	 public static UUID generarlo() {
+		 return UUID.ofEpochMillis(Instant.now().toEpochMilli());
+	 }
+	 
+	 public static String generarComoTexto() {
+		 return generar().toString().toLowerCase();
+	 }
 	 
 	 public static String obtenerValorDefectoComoTexto(final String valor) {
 		 return UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(valor,UUID_DEFECTO_TEXTO);
