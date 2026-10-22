@@ -2,12 +2,18 @@ package co.edu.uco.libreriauco.dto;
 
 import java.util.UUID;
 
+import org.springframework.web.bind.annotation.BindParam;
+
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilTexto;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilUUID;
 
 public class PaisDTO {
 	
+	
+	@BindParam("id")
 	private UUID id;
+	
+	@BindParam("nombre")
 	private String nombre;
 	
 	

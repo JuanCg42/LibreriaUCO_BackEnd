@@ -40,7 +40,44 @@ public class CatalogoMensajes {
 		public static final String LONGITUD_NOMBRE_PAIS_NO_VALIDA = "La longitud del nombre del pais no es válida.asegurese que este entre 1 y 50";
 		public static final String FORMATO_NOMBRE_PAIS_NO_VALIDO = "El formato del nombre no es valido. Asegurese de que solamente tenga letras de la A a la Z, mayúsculas o minusculas y espacios";
 	}
-	
+
+	public static class Datos{
+
+		private Datos() {
+
+		}
+
+		private static final String CONTACTO = " Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicación y reporte la novedad...";
+
+		public static final String USUARIO_ERROR_CREANDO = "Se ha presentado un problema tratando de registrar la información deseada." + CONTACTO;
+		public static final String USUARIO_ERROR_CONSULTANDO = "Se ha presentado un problema tratando de consultar la información deseada." + CONTACTO;
+		public static final String USUARIO_ERROR_ACTUALIZANDO = "Se ha presentado un problema tratando de actualizar la información deseada." + CONTACTO;
+		public static final String USUARIO_ERROR_ELIMINANDO = "Se ha presentado un problema tratando de eliminar la información deseada." + CONTACTO;
+
+		public static final String TECNICO_ERROR_SQL_CREANDO_PAIS = "Se presentó una SQLException ejecutando el INSERT en la tabla Pais. Revise la causa raíz: ";
+		public static final String TECNICO_ERROR_SQL_CONSULTANDO_PAIS = "Se presentó una SQLException ejecutando el SELECT en la tabla Pais. Revise la causa raíz: ";
+		public static final String TECNICO_ERROR_SQL_ACTUALIZANDO_PAIS = "Se presentó una SQLException ejecutando el UPDATE en la tabla Pais. Revise la causa raíz: ";
+		public static final String TECNICO_ERROR_SQL_ELIMINANDO_PAIS = "Se presentó una SQLException ejecutando el DELETE en la tabla Pais. Revise la causa raíz: ";
+		public static final String TECNICO_ERROR_SQL_CONSULTANDO_DEPARTAMENTO = "Se presentó una SQLException ejecutando el SELECT en la tabla Departamento. Revise la causa raíz: ";
+	}
+
+	public static class UtilSQLTecnico{
+
+		private UtilSQLTecnico() {
+
+		}
+
+		public static final String ERROR_INICIANDO_TRANSACCION = "Se presentó una SQLException al desactivar el autocommit (Connection.setAutoCommit(false)). Revise la causa raíz: ";
+		public static final String ERROR_CONFIRMANDO_TRANSACCION = "Se presentó una SQLException al confirmar la transacción (Connection.commit). Revise la causa raíz: ";
+		public static final String ERROR_CANCELANDO_TRANSACCION = "Se presentó una SQLException al cancelar la transacción (Connection.rollback). Revise la causa raíz: ";
+		public static final String ERROR_CERRANDO_CONEXION = "Se presentó una SQLException al cerrar la conexión (Connection.close). Revise la causa raíz: ";
+
+		public static final String USUARIO_ERROR_INICIANDO_TRANSACCION = "Se ha presentado un problema tratando de iniciar la transacción contra la fuente de información. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicación y reporte la novedad...";
+		public static final String USUARIO_ERROR_CONFIRMANDO_TRANSACCION = "Se ha presentado un problema tratando de confirmar los cambios contra la fuente de información. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicación y reporte la novedad...";
+		public static final String USUARIO_ERROR_CANCELANDO_TRANSACCION = "Se ha presentado un problema tratando de deshacer los cambios contra la fuente de información. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicación y reporte la novedad...";
+		public static final String USUARIO_ERROR_CERRANDO_CONEXION = "Se ha presentado un problema tratando de cerrar la conexión contra la fuente de información. Por favor intente de nuevo y si el problema persiste contacte al administrador de la aplicación y reporte la novedad...";
+	}
+
 	
 	
 	

@@ -2,7 +2,6 @@ package co.edu.uco.libreriauco.dao;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -44,7 +43,8 @@ class PaisSqlServerDAOTest {
 			assertTrue(dao.consultarTodos().stream().anyMatch(p -> p.getId().equals(pais.getId())));
 
 			dao.eliminar(pais.getId());
-			assertNull(dao.consultarPorId(pais.getId()));
+			// Anti-null: si no existe se devuelve una entidad con el id por defecto
+			assertEquals(UtilUUID.obtenerUUIDDefecto(), dao.consultarPorId(pais.getId()).getId());
 		} finally {
 			factoria.cancelarTransaccion();
 			factoria.cerrarConexion();
