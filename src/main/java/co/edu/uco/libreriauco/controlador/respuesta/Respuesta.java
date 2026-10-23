@@ -8,13 +8,13 @@ import co.edu.uco.libreriauco.transversal.utilitarios.UtilObjeto;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilUUID;
 
 class Respuesta<D> {
-	
-	private LocalDateTime timestamp =LocalDateTime.now();//Esto se debe hacer con el utilitario fecha
+
+	private LocalDateTime timestamp = LocalDateTime.now();// Esto se debe hacer con el utilitario fecha
 	private String correlationId;
 	private List<String> mensajes;
 	private List<D> datos;
 	private EstadoRespuesta estado;
-	
+
 	protected Respuesta(List<String> mensajes, List<D> datos, EstadoRespuesta estado) {
 		setMensajes(mensajes);
 		setDatos(datos);
@@ -42,25 +42,20 @@ class Respuesta<D> {
 		this.timestamp = timestamp;
 	}
 
-	private List<String> getMensajes() {
+	public List<String> getMensajes() {
 		return mensajes;
 	}
 
-	private List<D> getDatos() {
+	public List<D> getDatos() {
 		return datos;
 	}
 
-	private EstadoRespuesta getEstado() {
+	public EstadoRespuesta getEstado() {
 		return estado;
 	}
 
-	private String getCorrelationId() {
+	public String getCorrelationId() {
 		return correlationId;
 	}
-
-	
-	
-	
-	
 
 }
